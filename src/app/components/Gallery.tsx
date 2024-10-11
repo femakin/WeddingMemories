@@ -8,7 +8,7 @@ interface GalleryProps {
 
 function Gallery({ scrollToGallery }: GalleryProps) {
   return (
-    <section className="w-full h-96 bg-white bg-opacity-70 flex flex-col justify-center items-center text-center p-6 mb-12 rounded-lg shadow-lg relative overflow-hidden">
+    <section className="w-full h-96 bg-white bg-opacity-70 flex flex-col justify-center items-center text-center p-6 mb-6 rounded-lg shadow-lg relative overflow-hidden">
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-pink-200 via-purple-300 to-blue-200 opacity-30"
         initial={{ opacity: 0 }}

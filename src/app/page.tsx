@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Pagination from "./components/Pagination";
 import Gallery from "./components/Gallery";
+import UploadSection from "./components/UploadSection";
 
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
@@ -113,84 +114,12 @@ export default function Home() {
     <main className="min-h-screen w-full flex flex-col items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200">
       <Header scrollToGallery={scrollToGallery} />
 
-    {/*   <section className="w-full h-96 bg-white bg-opacity-70 flex flex-col justify-center items-center text-center p-6 mb-12 rounded-lg shadow-lg relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-pink-200 via-purple-300 to-blue-200 opacity-30"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-        />
-        <motion.h1
-          className="text-5xl font-bold text-pink-600 mb-4 relative z-10"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Capture the Magic
-        </motion.h1>
-        <motion.p
-          className="text-xl text-gray-700 relative z-10"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          Share every laugh, dance, and unforgettable moment at the wedding!
-        </motion.p>
-        <motion.div
-          className="relative z-10 mt-8"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          <button
-            onClick={scrollToGallery}
-            className="bg-pink-500 text-white px-6 py-2 rounded-full shadow-lg hover:bg-pink-600 transition duration-300"
-          >
-            View the Gallery
-          </button>
-        </motion.div>
-      </section> */}
 
       <Gallery scrollToGallery={scrollToGallery} />
 
-      <motion.div
-        className="bg-white bg-opacity-70 p-6 rounded-lg shadow-md mb-12 w-full max-w-md"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <label htmlFor="file-upload" className="block mb-2 font-semibold">
-          Select a file to upload:
-        </label>
-        <input
-          id="file-upload"
-          type="file"
-          onChange={handleChange}
-          className="block mb-4 w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
-        />
-        <button
-          disabled={uploading}
-          onClick={uploadFile}
-          className={`w-full py-2 px-4 rounded-lg text-white font-bold transition duration-300 ${
-            uploading ? "bg-gray-400" : "bg-pink-500 hover:bg-pink-600"
-          }`}
-          aria-busy={uploading}
-          aria-label="Upload file"
-        >
-          {uploading ? "Uploading..." : "Upload"}
-        </button>
 
-        {url && (
-          <motion.div
-            className="mt-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Image src={url} alt="Latest uploaded image" fill className="rounded-lg shadow-lg" />
-          </motion.div>
-        )}
-      </motion.div>
+
+      <UploadSection handleChange={handleChange} uploadFile={uploadFile} url={url} uploading={uploading}/>
 
       <motion.div
         ref={galleryRef}
