@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { pinata } from "../../utils/config";
 import Footer from "./components/Footer";
@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Pagination from "./components/Pagination";
 import Gallery from "./components/Gallery";
 import UploadSection from "./components/UploadSection";
+import ImageCard from "./components/ImageCard";
 
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
@@ -134,7 +135,7 @@ export default function Home() {
             Loading images...
           </p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-16">
+        /*   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-16">
             {currentImages.map((imgUrl, idx) => (
               <motion.div
                 key={idx}
@@ -161,7 +162,8 @@ export default function Home() {
                 </button>
               </motion.div>
             ))}
-          </div>
+          </div> */
+          <ImageCard currentImages={currentImages} downloadImage={downloadImage} />
         )}
 
        <Pagination images={images} paginate={paginate} imagesPerPage={imagesPerPage} currentPage={currentPage} />

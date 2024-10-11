@@ -26,12 +26,13 @@ function Gallery({ scrollToGallery }: GalleryProps) {
       </motion.h1>
       <motion.p
         className="text-xl text-gray-700 relative z-10"
-        aria-label="Gallery Hero Description" // Add ARIA label for accessibility
+        aria-label="Gallery Hero Description"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        Share every laugh, dance, and unforgettable moment at the wedding!
+        Share every laugh, dance, and unforgettable moment at the wedding! <br />
+     {/*    Upload your cherished moments. */}
       </motion.p>
       <motion.div
         className="relative z-10 mt-8"
