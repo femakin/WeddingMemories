@@ -1,8 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 interface GalleryProps {
-
   scrollToGallery: () => void;
 }
 
@@ -17,7 +16,7 @@ function Gallery({ scrollToGallery }: GalleryProps) {
       />
       <motion.h1
         className="text-5xl font-bold text-pink-600 mb-4 relative z-10"
-        aria-label="Gallery Hero Title" // Add ARIA label for accessibility
+        aria-label="Gallery Hero Title"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -32,7 +31,6 @@ function Gallery({ scrollToGallery }: GalleryProps) {
         transition={{ duration: 1, delay: 0.5 }}
       >
         Share every laugh, dance, and unforgettable moment at the wedding! <br />
-     {/*    Upload your cherished moments. */}
       </motion.p>
       <motion.div
         className="relative z-10 mt-8"

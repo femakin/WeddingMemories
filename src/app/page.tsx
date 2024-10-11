@@ -115,12 +115,14 @@ export default function Home() {
     <main className="min-h-screen w-full flex flex-col items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200">
       <Header scrollToGallery={scrollToGallery} />
 
-
       <Gallery scrollToGallery={scrollToGallery} />
 
-
-
-      <UploadSection handleChange={handleChange} uploadFile={uploadFile} url={url} uploading={uploading}/>
+      <UploadSection
+        handleChange={handleChange}
+        uploadFile={uploadFile}
+        url={url}
+        uploading={uploading}
+      />
 
       <motion.div
         ref={galleryRef}
@@ -135,11 +137,15 @@ export default function Home() {
             Loading images...
           </p>
         ) : (
-
           <ImageCard currentImages={currentImages} downloadImage={downloadImage} />
         )}
 
-       <Pagination images={images} paginate={paginate} imagesPerPage={imagesPerPage} currentPage={currentPage} />
+        <Pagination
+          images={images}
+          paginate={paginate}
+          imagesPerPage={imagesPerPage}
+          currentPage={currentPage}
+        />
       </motion.div>
 
       <Footer />

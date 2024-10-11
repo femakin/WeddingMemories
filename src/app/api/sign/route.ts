@@ -19,7 +19,6 @@ export async function POST(req: NextRequest) {
     dpr: 2,
     sharpen: 1
   })
-    // console.log(url)
     return NextResponse.json(url, { status: 200 });
   } catch (error) {
     console.log(error);

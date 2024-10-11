@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface PaginationProps {
   images: string[];
@@ -9,8 +9,6 @@ interface PaginationProps {
 
 function Pagination({ images, imagesPerPage, currentPage, paginate }: PaginationProps) {
   const totalPages = Math.ceil(images.length / imagesPerPage);
-
-  // Limit the number of pagination buttons to a maximum (e.g., 10)
   const maxVisibleButtons = 10;
   const startPage = Math.max(currentPage - Math.floor(maxVisibleButtons / 2), 1);
   const endPage = Math.min(startPage + maxVisibleButtons - 1, totalPages);
