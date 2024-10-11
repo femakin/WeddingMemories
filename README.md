@@ -1,14 +1,14 @@
 # Wedding Memories
 
-Welcome to **[Wedding Memories](https://wedding-memories-teal.vercel.app/)** — an app designed to capture, share, and cherish every unforgettable moment from your special day! Built with **[Pinata's Files API](https://docs.pinata.cloud/api-reference/files)**, this app allows guests to effortlessly upload and share photos and videos from your wedding, creating a collective album of beautiful memories.
+Welcome to **[Wedding Memories](https://wedding-memories-teal.vercel.app/)** — an app designed to capture, share, and cherish every unforgettable moment from your special day! Built with **[Pinata's Files API](https://docs.pinata.cloud/api-reference/files)**, this app allows guests to effortlessly upload and share photos from your wedding, creating a collective album of beautiful memories.
 
 ## 🎯 Project Overview
 
-Wedding Memories is a user-friendly platform tailored to elevate the wedding experience by allowing guests to become storytellers. From candid snapshots to heartfelt videos, everyone can contribute to a shared gallery, capturing the essence of the celebration.
+Wedding Memories is a user-friendly platform tailored to elevate the wedding experience by allowing guests to become storytellers. From candid snapshots to heartfelt moments, everyone can contribute to a shared gallery, capturing the essence of the celebration.
 
 ## 🚀 Features
 
-- **Seamless File Uploads**: Easy-to-use interface for guests to upload images, videos, and more directly from their devices.
+- **Seamless File Uploads**: Easy-to-use interface for guests to upload images, and more directly from their devices.
 - **Pinata Integration**: Utilizes Pinata’s Files API for secure, efficient file uploads and storage.
 - **Optimized Performance**: Leverages Pinata's CDN for fast content delivery and enhanced user experience.
 - **Customizable Gallery**: View all shared moments in a beautiful, responsive gallery.

@@ -27,6 +27,7 @@ export default function Home() {
     try {
       const filesRequest = await fetch("/api/listfiles");
       const files = await filesRequest.json();
+
       const urls = await Promise.all(
         files?.files?.map(async (file: { cid: string }) => {
           const urlRequest = await fetch("/api/sign", {
@@ -39,6 +40,8 @@ export default function Home() {
         }),
       );
       setImages(urls);
+
+
     } catch (e) {
       console.error("Error fetching images:", e);
     } finally {
@@ -115,14 +118,12 @@ export default function Home() {
     <main className="min-h-screen w-full flex flex-col items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200">
       <Header scrollToGallery={scrollToGallery} />
 
+
       <Gallery scrollToGallery={scrollToGallery} />
 
-      <UploadSection
-        handleChange={handleChange}
-        uploadFile={uploadFile}
-        url={url}
-        uploading={uploading}
-      />
+
+
+      <UploadSection handleChange={handleChange} uploadFile={uploadFile} url={url} uploading={uploading}/>
 
       <motion.div
         ref={galleryRef}
@@ -137,15 +138,11 @@ export default function Home() {
             Loading images...
           </p>
         ) : (
+
           <ImageCard currentImages={currentImages} downloadImage={downloadImage} />
         )}
 
-        <Pagination
-          images={images}
-          paginate={paginate}
-          imagesPerPage={imagesPerPage}
-          currentPage={currentPage}
-        />
+       <Pagination images={images} paginate={paginate} imagesPerPage={imagesPerPage} currentPage={currentPage} />
       </motion.div>
 
       <Footer />

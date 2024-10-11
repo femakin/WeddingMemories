@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
- import { env } from "process";
+import { env } from "process";
 
 
 export const dynamic = "force-dynamic";
@@ -11,7 +11,7 @@ export async function GET() {
       headers: {
         Authorization: `Bearer ${env.PINATA_JWT}`,
       },
-      cache: 'no-store',
+      cache: 'no-cache'
     };
 
     const response = await fetch('https://api.pinata.cloud/v3/files', options);
@@ -21,10 +21,9 @@ export async function GET() {
     }
 
     const { data } = await response.json();
-
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    console.log(error);
+    console.log(error, "Error listing files");
     return NextResponse.json({ text: "Error listing files" }, { status: 500 });
   }
 }
