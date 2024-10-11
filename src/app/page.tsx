@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { pinata } from "../../utils/config";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Pagination from "./components/Pagination";
+import Gallery from "./components/Gallery";
 
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
@@ -111,7 +113,7 @@ export default function Home() {
     <main className="min-h-screen w-full flex flex-col items-center bg-gradient-to-r from-pink-200 via-purple-200 to-blue-200">
       <Header scrollToGallery={scrollToGallery} />
 
-      <section className="w-full h-96 bg-white bg-opacity-70 flex flex-col justify-center items-center text-center p-6 mb-12 rounded-lg shadow-lg relative overflow-hidden">
+    {/*   <section className="w-full h-96 bg-white bg-opacity-70 flex flex-col justify-center items-center text-center p-6 mb-12 rounded-lg shadow-lg relative overflow-hidden">
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-pink-200 via-purple-300 to-blue-200 opacity-30"
           initial={{ opacity: 0 }}
@@ -147,7 +149,9 @@ export default function Home() {
             View the Gallery
           </button>
         </motion.div>
-      </section>
+      </section> */}
+
+      <Gallery scrollToGallery={scrollToGallery} />
 
       <motion.div
         className="bg-white bg-opacity-70 p-6 rounded-lg shadow-md mb-12 w-full max-w-md"
@@ -231,25 +235,7 @@ export default function Home() {
           </div>
         )}
 
-        <div className="mt-8 flex justify-center gap-4 py-8">
-          {Array.from(
-            { length: Math.ceil(images.length / imagesPerPage) },
-            (_, idx) => (
-              <button
-                key={idx}
-                onClick={() => paginate(idx + 1)}
-                className={`px-4 py-2 rounded-full ${
-                  currentPage === idx + 1
-                    ? "bg-pink-500 text-white"
-                    : "bg-gray-300 text-gray-700 hover:bg-pink-400 hover:text-white"
-                } transition duration-300`}
-                aria-label={`Go to page ${idx + 1}`}
-              >
-                {idx + 1}
-              </button>
-            )
-          )}
-        </div>
+       <Pagination images={images} paginate={paginate} imagesPerPage={imagesPerPage} currentPage={currentPage} />
       </motion.div>
 
       <Footer />

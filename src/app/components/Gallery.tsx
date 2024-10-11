@@ -1,60 +1,53 @@
-import { motion } from "framer-motion";
-import ImageCard from "./ImageCard";
-import Pagination from "./Pagination";
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface GalleryProps {
-  images: string[];
-  loading: boolean;
-  currentPage: number;
-  imagesPerPage: number;
-  paginate: (pageNumber: number) => void;
-  downloadImage: (imageUrl: string, fileName: string) => void;
+
+  scrollToGallery: () => void;
 }
 
-const Gallery: React.FC<GalleryProps> = ({
-  images,
-  loading,
-  currentPage,
-  imagesPerPage,
-  paginate,
-  downloadImage,
-}) => {
-  const indexOfLastImage = currentPage * imagesPerPage;
-  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
-  const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
-
+function Gallery({ scrollToGallery }: GalleryProps) {
   return (
-    <motion.div
-      className="p-6 w-full max-w-screen-xl bg-white bg-opacity-70 rounded-lg shadow-lg"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Shared Memories</h2>
-      {loading ? (
-        <p className="text-center text-lg" role="status">
-          Loading images...
-        </p>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-16">
-          {currentImages.map((imgUrl, idx) => (
-            <ImageCard
-              key={idx}
-              imgUrl={imgUrl}
-              index={idx}
-              downloadImage={downloadImage}
-            />
-          ))}
-        </div>
-      )}
-      <Pagination
-        totalImages={images.length}
-        imagesPerPage={imagesPerPage}
-        currentPage={currentPage}
-        paginate={paginate}
+    <section className="w-full h-96 bg-white bg-opacity-70 flex flex-col justify-center items-center text-center p-6 mb-12 rounded-lg shadow-lg relative overflow-hidden">
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-pink-200 via-purple-300 to-blue-200 opacity-30"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
       />
-    </motion.div>
+      <motion.h1
+        className="text-5xl font-bold text-pink-600 mb-4 relative z-10"
+        aria-label="Gallery Hero Title" // Add ARIA label for accessibility
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Capture the Magic
+      </motion.h1>
+      <motion.p
+        className="text-xl text-gray-700 relative z-10"
+        aria-label="Gallery Hero Description" // Add ARIA label for accessibility
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        Share every laugh, dance, and unforgettable moment at the wedding!
+      </motion.p>
+      <motion.div
+        className="relative z-10 mt-8"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+      >
+        <button
+          onClick={scrollToGallery}
+          className="bg-pink-500 text-white px-6 py-2 rounded-full shadow-lg hover:bg-pink-600 transition duration-300"
+        >
+          View the Gallery
+        </button>
+      </motion.div>
+    </section>
   );
-};
+}
 
 export default Gallery;
