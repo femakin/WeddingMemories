@@ -1,6 +1,6 @@
 # Wedding Memories
 
-Welcome to **[Wedding Memories](https://wedding-memories-teal.vercel.app/)** — an app designed to capture, share, and cherish every unforgettable moment from your special day! Built with **[Pinata's Files API](https://docs.pinata.cloud/api-reference/files)**, this app allows guests to effortlessly upload and share photos from your wedding, creating a collective album of beautiful memories.
+Welcome to **[Wedding Memories](https://main.d2kkpc9riv1gcp.amplifyapp.com/)** — an app designed to capture, share, and cherish every unforgettable moment from your special day! Built with **[Pinata's Files API](https://docs.pinata.cloud/api-reference/files)**, this app allows guests to effortlessly upload and share photos from your wedding, creating a collective album of beautiful memories.
 
 ## 🎯 Project Overview
 
@@ -23,7 +23,7 @@ This app is inspired by the idea that weddings are best remembered through the e
 - **Frontend**: React, Next.js, Framer Motion
 - **Backend**: Next.js, Pinata API
 - **Styling**: Tailwind CSS
-- **Hosting**: Vercel
+- **Hosting**: Amplify
 
 ## ⚙️ Setup & Installation
 
