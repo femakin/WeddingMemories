@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { env } from "process";
+// import { env } from "process";
 
 
 export const dynamic = "force-dynamic";
@@ -9,7 +9,7 @@ export async function GET() {
     const options: RequestInit = {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${env.PINATA_JWT}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_PINATA_JWT}`,
       },
       cache: 'no-cache'
     };
