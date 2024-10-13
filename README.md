@@ -39,7 +39,7 @@ This app is inspired by the idea that weddings are best remembered through the e
 3. **Environment Variables:**Set up environment variables for Pinata API keys in a `.env.local` file:
     ```bash
     PINATA_JWT=your_api_key
-    NEXT_PUBLIC_GATEWAY_URL=your_secret_key
+    PUBLIC_GATEWAY_URL=your_secret_key
     ```
 4. **Install Dependencies:**:
     ```bash
